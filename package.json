@@ -1,0 +1,49 @@
+{
+  "name": "@havenengineering/REPOSITORY_NAME",
+  "version": "1.0.0",
+  "description": "Replace this with a helpful description",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx",
+    "prettier": "prettier --write '**/*.ts'",
+    "check-format": "prettier --check '**/*.ts'",
+    "prepublishOnly": "npm run lint && npm test && npm run build",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/HavenEngineering/REPOSITORY_NAME.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [],
+  "author": "HavenEngineering",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/HavenEngineering/REPOSITORY_NAME/issues"
+  },
+  "homepage": "https://github.com/HavenEngineering/REPOSITORY_NAME#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@havenengineering/eslint-config-haven": "^1.0.17",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/jest": "^26.0.24",
+    "eslint": "^7.31.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.0",
+    "jest": "^27.0.6",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
+  }
+}
