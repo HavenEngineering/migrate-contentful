@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "npm run clean && tsc",
-    "postbuild": "cp src/template.txt dist/template.txt",
+    "postbuild": "chmod +x dist/migrate.js && cp src/template.txt dist/template.txt",
     "clean": "rimraf dist",
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx",
