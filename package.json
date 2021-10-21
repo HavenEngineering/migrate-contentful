@@ -1,5 +1,5 @@
 {
-  "name": "@havenengineering/REPOSITORY_NAME",
+  "name": "@havenengineering/module-haven-contentful-migration",
   "version": "1.0.0",
   "description": "Replace this with a helpful description",
   "main": "dist/src/index.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/HavenEngineering/REPOSITORY_NAME.git"
+    "url": "git+ssh://git@github.com/HavenEngineering/module-haven-contentful-migration.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -28,9 +28,9 @@
   "author": "HavenEngineering",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/HavenEngineering/REPOSITORY_NAME/issues"
+    "url": "https://github.com/HavenEngineering/module-haven-contentful-migration/issues"
   },
-  "homepage": "https://github.com/HavenEngineering/REPOSITORY_NAME#readme",
+  "homepage": "https://github.com/HavenEngineering/module-haven-contentful-migration#readme",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
