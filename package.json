@@ -39,6 +39,7 @@
     "@havenengineering/eslint-config-haven": "^1.0.17",
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^26.0.24",
+    "contentful-migration": "^4.5.8",
     "eslint": "^7.31.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.0",
