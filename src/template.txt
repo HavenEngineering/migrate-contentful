@@ -1,0 +1,12 @@
+import { MigrationContext, MigrationExecutor } from "../types";
+
+export const up: MigrationExecutor = async ({ context }: MigrationContext) => {
+  await context.migrate(migration => {
+    // See https://github.com/contentful/contentful-migration for docs
+    // and https://github.com/contentful/contentful-migration/tree/master/examples for examples
+  });
+};
+
+export const down: () => void = () => {
+  // do nothing
+};

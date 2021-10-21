@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "npm run clean && tsc",
+    "postbuild": "cp src/template.txt dist/template.txt",
     "clean": "rimraf dist",
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx",
@@ -45,5 +46,11 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "contentful-migration": "^4.5.8",
+    "dotenv": "^10.0.0",
+    "umzug": "^3.0.0-beta.16",
+    "umzug-contentful": "^1.1.3"
   }
 }
