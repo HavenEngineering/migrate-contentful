@@ -2,8 +2,7 @@
   "name": "@havenengineering/module-haven-contentful-migration",
   "version": "1.0.0",
   "description": "Replace this with a helpful description",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "bin": "dist/migrate.js",
   "files": [
     "dist/"
   ],
