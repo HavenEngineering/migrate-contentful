@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Umzug } from "umzug";
 import { ContentfulStorage } from "umzug-contentful";
 import { runMigration, MigrationFunction } from "contentful-migration";
