@@ -1,6 +1,6 @@
 {
   "name": "@havenengineering/migrate-contentful",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Replace this with a helpful description",
   "bin": {
     "migrate-contentful": "dist/migrate.js"
