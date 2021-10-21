@@ -1,4 +1,12 @@
-import { MigrationContext, MigrationExecutor } from "../types";
+import { MigrationFunction } from "contentful-migration";
+
+type MigrationContext = {
+  context: {
+    migrate: (migrationFunction: MigrationFunction) => Promise<void>;
+  };
+};
+
+type MigrationExecutor = (context: MigrationContext) => Promise<void>;
 
 export const up: MigrationExecutor = async ({ context }: MigrationContext) => {
   await context.migrate(migration => {
