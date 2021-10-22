@@ -18,7 +18,7 @@ With your `.npmrc` configured to point to the Haven package repo on GitHub for t
 
 ### Config
 
-The library expects the followin environment variables to be set:
+The library expects the following environment variables to be set:
 
 env|description
 ---|---
@@ -33,7 +33,7 @@ CONTENTFUL_SPACE_ID=abc123
 CONTENTFUL_MANAGEMENT_TOKEN=secret-token
 ```
 
-It's not recommended to set the `CONTENTFUL_ENVIRONMENT` globally like this, because you likely want to specify it every time you interact with an environment.
+It's not recommended to set the `CONTENTFUL_ENVIRONMENT` globally like this, because you likely want to specify it every time you interact with an environment. E.g. `CONTENTFUL_ENVIRONMENT=master migrate-contentful pending`.
 
 ### Available commands
 
