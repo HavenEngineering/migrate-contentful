@@ -1,15 +1,47 @@
-# Module Template
+# migrate-contentful
 
-Use this template to get your new npm module started and ready to be published to the `@havenengineering` GitHub Package Registry.
+Tooling to simplify migrating your content model in Contentful.
+
+## Installation
+
+```
+npm install -D @havenengineering/migrate-contentful
+```
+
+With your `.npmrc` configured to point to the Haven package repo on GitHub for the relevant scope:
+
+```
+@havenengineering:registry=https://npm.pkg.github.com
+```
 
 ## Usage
 
-- [Create](https://github.com/HavenEngineering/module-template/generate) a new repository from this template. See the [docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template#creating-a-repository-from-a-template) from GitHub.
-- Replace the string `migrate-contentful` with your module's name throughout the repository. Our convention is that it should be the same as the name of your repository.
-- The libraries included in the `package.json` have most likely been updated since this template was created. Run [`npm outdated`](https://docs.npmjs.com/cli/v7/commands/npm-outdated) to see which ones to update. You can run [`npm update`](https://docs.npmjs.com/cli/v7/commands/npm-update) to automatically update some of them, but this won't upgrade to new major versions.
-- The module is configured to notify MS Teams when the build or publish workflows on GitHub Actions fail. To get this working, you need to:
-  - Follow [these steps](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) to create a new webhook URL in the channel you'd like to receive notifications. Copy the URL.
-  - Create a new "Repository Secret" called `MSTEAMS_WEBHOOK` [in the GitHub settings for your repo](https://github.com/HavenEngineering/migrate-contentful/settings/secrets/actions). Paste the URL from the previous step as the value.
+### Config
+
+The library expects the followin environment variables to be set:
+
+env|description
+---|---
+`CONTENTFUL_SPACE_ID`|The ID of the Contentful space you're migrating
+`CONTENTFUL_MANAGEMENT_TOKEN`|An auth token for the Contentful Management API. Available in the Contentful UI.
+`CONTENTFUL_ENVIRONMENT`|The [environment](https://www.contentful.com/developers/docs/concepts/multiple-environments/) you'd like to run the migration on.
+
+If you have a `.env` file in the root of your application, the variables will be set from there. Example `.env`:
+
+```
+CONTENTFUL_SPACE_ID=abc123
+CONTENTFUL_MANAGEMENT_TOKEN=secret-token
+```
+
+It's not recommended to set the `CONTENTFUL_ENVIRONMENT` globally like this, because you likely want to specify it every time you interact with an environment.
+
+### Available commands
+
+This library uses [`umzug`'s CLI](https://github.com/sequelize/umzug#cli-usage) to power it's migrations. For a list of available commands, run:
+
+```sh
+npx migrate-contentful -h
+```
 
 ## Publishing the package
 
