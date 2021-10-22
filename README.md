@@ -33,6 +33,8 @@ CONTENTFUL_SPACE_ID=abc123
 CONTENTFUL_MANAGEMENT_TOKEN=secret-token
 ```
 
+Make sure the `.env` file is in your `.gitignore` so you don't accidentally commit your secrets.
+
 It's not recommended to set the `CONTENTFUL_ENVIRONMENT` globally like this, because you likely want to specify it every time you interact with an environment. E.g. `CONTENTFUL_ENVIRONMENT=master migrate-contentful pending`.
 
 ### Available commands
