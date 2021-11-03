@@ -1,7 +1,7 @@
 {
   "name": "@havenengineering/migrate-contentful",
   "version": "1.0.3",
-  "description": "Replace this with a helpful description",
+  "description": "Migration tooling for Contentful spaces",
   "bin": {
     "migrate-contentful": "dist/migrate.js"
   },
@@ -26,9 +26,9 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "keywords": [],
+  "keywords": ["migrate", "contentful", "space", "migration", "content"],
   "author": "HavenEngineering",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/HavenEngineering/migrate-contentful/issues"
   },
