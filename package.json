@@ -23,9 +23,6 @@
     "type": "git",
     "url": "git+ssh://git@github.com/HavenEngineering/migrate-contentful.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "keywords": [
     "migrate",
     "contentful",
