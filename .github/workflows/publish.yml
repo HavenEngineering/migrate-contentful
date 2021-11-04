@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    tags: ['v*']
+    tags: [ 'v*' ]
 
 jobs:
   publish:
@@ -20,13 +20,13 @@ jobs:
         run: npm publish --unsafe-perm # See https://github.com/npm/npm/issues/3497
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     - uses: actions/setup-node@v2
-       with:
-         registry-url: 'https://registry.npmjs.org'
-     - name: Publish
-       run: npm publish --unsafe-perm --access public
-       env:
-         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
+      - uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://registry.npmjs.org'
+      - name: Publish
+        run: npm publish --unsafe-perm --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
       - name: Notify via Microsoft Teams
         if: failure()
         uses: aliencube/microsoft-teams-actions@v0.8.0
