@@ -1,6 +1,6 @@
 {
   "name": "@havenengineering/migrate-contentful",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Migration tooling for Contentful spaces",
   "bin": {
     "migrate-contentful": "dist/migrate.js"
