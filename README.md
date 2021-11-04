@@ -8,12 +8,6 @@ Tooling to simplify migrating your content model in Contentful.
 npm install -D @havenengineering/migrate-contentful
 ```
 
-With your `.npmrc` configured to point to the Haven package repo on GitHub for the relevant scope:
-
-```
-@havenengineering:registry=https://npm.pkg.github.com
-```
-
 ## Usage
 
 ### Config
@@ -44,8 +38,11 @@ This library uses [`umzug`'s CLI](https://github.com/sequelize/umzug#cli-usage) 
 ```sh
 npx migrate-contentful -h
 ```
+## Contributing
 
-## Publishing the package
+Contributions welcome!
+
+### Publishing the package
 
 There is a [GitHub action](https://github.com/HavenEngineering/migrate-contentful/actions/workflows/publish.yml) configured to publish the package on new version tags. To publish a new version of the package:
 
