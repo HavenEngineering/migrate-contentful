@@ -45,7 +45,7 @@ The default migrations folder is `migrations/scripts`
 
 When creating a migration, you can use the `--folder` flag to specify a custom folder to look for migrations in.
 ```
-npx migrate-contentful --folder <path>
+npx migrate-contentful create --folder <path> --name <name>
 ``` 
 
 When running a migration `npx create-contentful-migration up`, should pass a `--glob` flag pointing to your custom folder.
