@@ -29,6 +29,9 @@ async function migrate(migrationFunction: MigrationFunction): Promise<void> {
 const args = process.argv.slice(2);
 const globIndex = args.findIndex(arg => arg === '--glob');
 const glob = globIndex !== -1 ? args[globIndex + 1] : `${process.cwd()}/migrations/scripts/*.ts`;
+if (globIndex !== -1) {
+  process.argv.splice(2 + globIndex, 2);
+}
 
 const umzug = new Umzug({
   migrations: { glob },
