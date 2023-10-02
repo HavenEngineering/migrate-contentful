@@ -31,7 +31,8 @@ const umzug = new Umzug({
   storage: new ContentfulStorage({
     spaceId: process.env.CONTENTFUL_SPACE_ID,
     environmentId: process.env.CONTENTFUL_ENVIRONMENT,
-    contentfulManagementToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN
+    contentfulManagementToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
+    locale: process.env.CONTENTFUL_LOCALE
   }),
   context: { migrate }, // do not pass a function as context – umzug will call it
   logger: console,
