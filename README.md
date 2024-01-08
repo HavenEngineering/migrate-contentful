@@ -19,6 +19,7 @@ env|description
 `CONTENTFUL_SPACE_ID`|The ID of the Contentful space you're migrating
 `CONTENTFUL_MANAGEMENT_TOKEN`|An auth token for the Contentful Management API. Available in the Contentful UI.
 `CONTENTFUL_ENVIRONMENT`|The [environment](https://www.contentful.com/developers/docs/concepts/multiple-environments/) you'd like to run the migration on.
+`CONTENTFUL_LOCALE`|(Optional, default `en-US`) The [locale](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale) you'd like to run the migration on (must be available within your space).
 
 If you have a `.env` file in the root of your application, the variables will be set from there. Example `.env`:
 
