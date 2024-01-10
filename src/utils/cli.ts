@@ -9,7 +9,7 @@ type ExtractedReturnType<T extends flagNames> = T extends BooleanFlags
   ? boolean
   : T extends ValueFlags
   ? string
-  : never;
+  : null;
 
 const isBooleanFlag = (flag: flagNames): flag is BooleanFlags =>
   booleanFlags.find(f => f === flag) !== undefined;
