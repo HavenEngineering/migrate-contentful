@@ -4,8 +4,9 @@ import { Umzug } from "umzug";
 import { ContentfulStorage } from "umzug-contentful";
 import { runMigration, MigrationFunction } from "contentful-migration";
 import * as fs from "fs";
-import dotenv from "dotenv";
-dotenv.config();
+import { config } from "dotenv";
+import { extractCliFlagValueFromArgs } from "./utils/cli";
+config();
 
 if (
   !process.env.CONTENTFUL_SPACE_ID ||
@@ -17,20 +18,19 @@ if (
   process.exit(1);
 }
 
+const glob =
+  extractCliFlagValueFromArgs("--glob") ??
+  `${process.cwd()}/migrations/scripts/*.ts`;
+const yes = extractCliFlagValueFromArgs("-y");
+
 async function migrate(migrationFunction: MigrationFunction): Promise<void> {
   await runMigration({
     migrationFunction,
     spaceId: process.env.CONTENTFUL_SPACE_ID,
     environmentId: process.env.CONTENTFUL_ENVIRONMENT,
-    accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN
+    accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
+    yes
   });
-}
-
-const args = process.argv.slice(2);
-const globIndex = args.findIndex(arg => arg === '--glob');
-const glob = globIndex !== -1 ? args[globIndex + 1] : `${process.cwd()}/migrations/scripts/*.ts`;
-if (globIndex !== -1) {
-  process.argv.splice(2 + globIndex, 2);
 }
 
 const umzug = new Umzug({
