@@ -41,5 +41,5 @@ export function extractCliFlagValueFromArgs<T extends flagNames>(
     return false as ExtractedReturnType<T>;
   }
 
-  return null;
+  return null as ExtractedReturnType<T>;
 }
