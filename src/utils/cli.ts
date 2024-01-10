@@ -1,6 +1,7 @@
-
-type ValueFlags = '--glob';
-export function extractCliFlagValue(flag: ValueFlags): string | null {
+type ValueFlags = "--glob";
+export function getCliFlagValueAndRemoveFromArgs(
+  flag: ValueFlags
+): string | null {
   const args = process.argv.slice(2);
   const flagIndex = args.findIndex(arg => arg === flag);
 
@@ -15,8 +16,10 @@ export function extractCliFlagValue(flag: ValueFlags): string | null {
   return null;
 }
 
-type BooleanFlags = '-y';
-export function doesCliFlagExist(flag: BooleanFlags): boolean {
+type BooleanFlags = "-y";
+export function checkCliFlagExistsAndRemoveFromArgs(
+  flag: BooleanFlags
+): boolean {
   const args = process.argv.slice(2);
   const flagIndex = args.findIndex(arg => arg === flag);
 

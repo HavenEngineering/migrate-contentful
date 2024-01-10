@@ -5,7 +5,10 @@ import { ContentfulStorage } from "umzug-contentful";
 import { runMigration, MigrationFunction } from "contentful-migration";
 import * as fs from "fs";
 import { config } from "dotenv";
-import { doesCliFlagExist, extractCliFlagValue } from "./utils/cli";
+import {
+  getCliFlagValueAndRemoveFromArgs,
+  checkCliFlagExistsAndRemoveFromArgs
+} from "./utils/cli";
 config();
 
 if (
@@ -18,8 +21,10 @@ if (
   process.exit(1);
 }
 
-const glob = extractCliFlagValue("--glob") ?? `${process.cwd()}/migrations/scripts/*.ts`;
-const yes = doesCliFlagExist("-y");
+const glob =
+  getCliFlagValueAndRemoveFromArgs("--glob") ??
+  `${process.cwd()}/migrations/scripts/*.ts`;
+const yes = checkCliFlagExistsAndRemoveFromArgs("-y");
 
 async function migrate(migrationFunction: MigrationFunction): Promise<void> {
   await runMigration({
@@ -27,7 +32,7 @@ async function migrate(migrationFunction: MigrationFunction): Promise<void> {
     spaceId: process.env.CONTENTFUL_SPACE_ID,
     environmentId: process.env.CONTENTFUL_ENVIRONMENT,
     accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
-    yes,
+    yes
   });
 }
 
