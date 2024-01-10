@@ -49,10 +49,22 @@ When creating a migration, you can use the `--folder` flag to specify a custom f
 npx migrate-contentful create --folder <path> --name <name>
 ``` 
 
-When running a migration `npx create-contentful-migration up`, should pass a `--glob` flag pointing to your custom folder.
+When running a migration `npx migrate-contentful up`, one can _optionally_ pass a `--glob` flag pointing to your custom folder.
 ```
 npx migrate-contentful up --glob my-custom-folder/*.ext
 ```
+
+If this is not provided, it will default to `${cwd}/migrations/scripts/*.ts`
+
+## Suppressing prompts
+
+To suppress prompts when running a migration, one can _optionally_ pass a `-y` flag.
+
+```
+npx migrate-contentful up -y
+```
+
+If this exists, it will suppress prompts, if not it won't.
 
 ## Contributing
 
