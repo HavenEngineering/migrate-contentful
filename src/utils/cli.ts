@@ -6,11 +6,11 @@ export function getCliFlagValueAndRemoveFromArgs(
   const flagIndex = args.findIndex(arg => arg === flag);
 
   if (flagIndex !== -1) {
-    const nextValue = args[flagIndex + 1];
-    if (nextValue && nextValue.substring(0, 1) === "-") {
+    const value = args[flagIndex + 1];
+    if (value && value.substring(0, 1) === "-") {
       throw new Error(`Flag "${flag}" exists but no value provided`);
     }
-    const [_f, value] = process.argv.splice(2 + flagIndex, 2);
+    process.argv.splice(2 + flagIndex, 2);
     return value;
   }
   return null;
