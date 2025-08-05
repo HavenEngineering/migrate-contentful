@@ -40,17 +40,14 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@tsconfig/recommended": "^1.0.1",
-    "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.28.4",
     "contentful-migration": "^4.5.8",
     "eslint": "^7.31.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.0",
-    "jest": "^30.0.5",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
-    "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
   },
   "dependencies": {
