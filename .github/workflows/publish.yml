@@ -2,24 +2,24 @@ name: Publish
 
 on:
   push:
-    tags: [ 'v*' ]
+    tags: ["v*"]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 22
+          registry-url: "https://registry.npmjs.org"
       - name: Install
         run: npm ci
       - name: Publish to NPM
         run: npm publish --unsafe-perm --access public # See https://github.com/npm/npm/issues/3497
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
           registry-url: https://npm.pkg.github.com/
           scope: "@havenengineering"
