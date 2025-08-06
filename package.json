@@ -37,8 +37,8 @@
   },
   "homepage": "https://github.com/HavenEngineering/migrate-contentful#readme",
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
@@ -57,7 +57,7 @@
     "dotenv": "^10.0.0",
     "ts-node": "^10.4.0",
     "umzug": "^3.0.0-beta.16",
-    "umzug-contentful": "^1.1.3"
+    "umzug-contentful": "^1.1.6"
   },
   "peerDependencies": {
     "contentful-migration": ">=4.5.8"
